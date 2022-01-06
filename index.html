@@ -18,8 +18,21 @@
 		});
 
 		function izracunaj() {
-			console.log("izracunaj");
-			$("#sastojci").show();
+			if ($("#kolicina").val()) {
+				let kolicina = parseFloat($("#kolicina").val());
+
+				$("#sol").text((kolicina * 1000 * 0.023).toFixed(1));
+				$("#cili").text((kolicina / 18 * 27).toFixed(1));
+				$("#ljuta").text((kolicina / 18 * 31).toFixed(1));
+				$("#slatka").text((kolicina / 18 * 30).toFixed(1));
+				$("#papar").text((kolicina / 18 * 24).toFixed(1));
+				$("#secer").text((kolicina / 18 * 100).toFixed(1));
+
+				let prasak = Math.round(kolicina / 10);
+				$("#prasak").text(prasak == 0 ? 1 : prasak);
+
+				$("#sastojci").show();
+			}
 		}
 
 		
@@ -29,15 +42,21 @@
 	<style>
 		body {
 			font-size: 17px;
-		}
-		sup {
-			font-size: 10px;
+			background-color: #EAFEF1;
 		}
 		h1 {
-			font-size: 30px;
+			font-size: 33px;
 		}
 		.ingredient-amount {
 			font-size: 25px;
+		}
+		footer {
+			position: fixed;
+			height: 30px;
+			bottom: 0;
+			width: 100%;
+			background-color: #198754;
+			color: white;
 		}
 	</style>
 </head>
@@ -46,51 +65,54 @@
 		<h1>Kobaje</h1>
 		<div class="row" style="margin-bottom: 15px; margin-top: 20px;">
 			<div class="col-sm-3 align-self-center">
-				<input id="kolicina" type="number" style="width: 100%;" placeholder="Količina mesa" min="0">
+				<input id="kolicina" type="number" style="width: 100%;" placeholder="Količina mesa" min="1">
 			</div>
 		</div>
 		<div class="row" style="margin-bottom: 35px;">
 			<div class="col-sm-3 align-self-center">
-				<button id="izracunaj" style="width: 100%;">Izračunaj</button>
+				<button id="izracunaj" class="btn btn-success" style="width: 100%;">Izračunaj</button>
 			</div>
 		</div>
 		<div id="sastojci" style="display: none;">
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Sol (2.3%): <span class="ingredient-amount">230</span> g</span>
+					<span>Sol (2.3%): <span id="sol" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Papar: <span class="ingredient-amount">230</span> g</span>
+					<span>Čili: <span id="cili" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Čili: <span class="ingredient-amount">230</span> g</span>
+					<span>Ljuta paprika: <span id="ljuta" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Ljuta paprika: <span class="ingredient-amount">230</span> g</span>
+					<span>Slatka paprika: <span id="slatka" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Slatka paprika: <span class="ingredient-amount">230</span> g</span>
+					<span>Papar: <span id="papar" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Šećer: <span class="ingredient-amount">230</span> g</span>
+					<span>Šećer: <span id="secer" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-3 align-self-center">
-					<span>Prašak: <span class="ingredient-amount">230</span> g</span>
+					<span>Prašak: <span id="prasak" class="ingredient-amount"></span> kom</span>
 				</div>
 			</div>
 		</div>
+		<footer class="fixed-bottom">
+			<span style="margin-left: 15px;"><b>Kobaje</b>&reg;<i> Fićo</i></span>
+		</footer>
 	</div>
 </body>
 </html> 
