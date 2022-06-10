@@ -16,9 +16,9 @@
 				$("#sastojci").hide();
 			});
 			$('input[type=radio][name=btnVrsta]').on('change', function() {
-				console.log();
-				let value = $('input[name=btnVrsta]:checked', 'body').val();
-				switch(value) {
+				$("#sastojci").hide();
+
+				switch($('input[name=btnVrsta]:checked', 'body').val()) {
 					case "normalne":
 						$("#title").css("color", "#00cc55");
 						$("#izracunaj").css("background-color", "#00cc55");
@@ -66,12 +66,21 @@
 			font-size: 17px;
 			background-color: #EAFEF1;
 		}
+
 		h1 {
 			font-size: 33px;
 		}
-		.ingredient-amount {
-			font-size: 25px;
+
+		#title {
+			color: #00cc55;
 		}
+
+		#izracunaj {
+			width: 100%;
+			background-color: #00cc55;
+			color: white;
+		}
+
 		footer {
 			position: fixed;
 			height: 50px;
@@ -80,27 +89,27 @@
 			background-color: #00cc55;
 			color: white;
 		}
-		#izracunaj {
-			width: 100%;
-			background-color: #00cc55;
-			color: white;
+
+		.ingredient-amount {
+			font-size: 25px;
 		}
-		#title {
-			color: #00cc55;
-		}
+		
 		.btn {
 			border: 1px solid black;
 		}
+
 		#btnVrstaNormalne:checked + label {
 			background-color: #00cc55;
 			border: 2px solid darkgreen;
 			color: white;
 		}
+
 		#btnVrstaLjute:checked + label {
 			background-color: red;
 			border: 2px solid darkred;
 			color: white;
 		}
+		
 		#bntVrstaRostiljke:checked + label {
 			background-color: #adb000;
 			border: 2px solid darkgoldenrod;
