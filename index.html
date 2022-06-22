@@ -43,12 +43,56 @@
 			if ($("#kolicina").val()) {
 				let kolicina = parseFloat($("#kolicina").val());
 
-				$("#sol").text((kolicina * 1000 * 0.023).toFixed(1));
-				$("#cili").text((kolicina / 18 * 27).toFixed(1));
-				$("#ljuta").text((kolicina / 18 * 31).toFixed(1));
-				$("#slatka").text((kolicina / 18 * 30).toFixed(1));
-				$("#papar").text((kolicina / 18 * 24).toFixed(1));
-				$("#secer").text((kolicina / 18 * 100).toFixed(1));
+				let sol = 0;
+				let cili = 0;
+				let ljuta = 0;
+				let slatka = 0;
+				let papar = 0;
+				let secer = 0;
+
+				//TODO dodati dobre postotke za razlicite vrste !!!
+				switch($('input[name=btnVrsta]:checked', 'body').val()) {
+					case "normalne":
+						sol = (kolicina * 1000 * 0.023).toFixed(1);
+						cili = (kolicina / 18 * 27).toFixed(1);
+						ljuta = (kolicina / 18 * 31).toFixed(1);
+						slatka = (kolicina / 18 * 30).toFixed(1);
+						papar = (kolicina / 18 * 24).toFixed(1);
+						secer = (kolicina / 18 * 100).toFixed(1);
+
+						$("#sol-postotak").text(2.3);
+
+						break;
+					case "ljute":
+						sol = (kolicina * 1000 * 0.023).toFixed(1);
+						cili = (kolicina / 18 * 27).toFixed(1);
+						ljuta = (kolicina / 18 * 31).toFixed(1);
+						slatka = (kolicina / 18 * 30).toFixed(1);
+						papar = (kolicina / 18 * 24).toFixed(1);
+						secer = (kolicina / 18 * 100).toFixed(1);
+
+						$("#sol-postotak").text(2.3);
+
+						break;
+					case "rostiljke":
+						sol = (kolicina * 1000 * 0.017).toFixed(1);
+						cili = (kolicina / 18 * 27).toFixed(1);
+						ljuta = (kolicina / 18 * 31).toFixed(1);
+						slatka = (kolicina / 18 * 30).toFixed(1);
+						papar = (kolicina / 18 * 24).toFixed(1);
+						secer = (kolicina / 18 * 100).toFixed(1);
+
+						$("#sol-postotak").text(1.7);
+
+						break;
+				}
+
+				$("#sol").text(sol);
+				$("#cili").text(cili);
+				$("#ljuta").text(ljuta);
+				$("#slatka").text(slatka);
+				$("#papar").text(papar);
+				$("#secer").text(secer);
 
 				let prasak = Math.round(kolicina / 10);
 				$("#prasak").text(prasak == 0 ? 1 : prasak);
@@ -145,7 +189,7 @@
 		<div id="sastojci" style="display: none;">
 			<div class="row">
 				<div class="col-sm-10 col-md-6 col-lg-5 align-self-center">
-					<span>Sol (2.3%): <span id="sol" class="ingredient-amount"></span> g</span>
+					<span>Sol (<span id = "sol-postotak">2.3</span>%): <span id="sol" class="ingredient-amount"></span> g</span>
 				</div>
 			</div>
 			<div class="row">
@@ -180,7 +224,7 @@
 			</div>
 		</div>
 		<footer class="fixed-bottom">
-			<span style="text-align: center; margin-left: auto; margin-right: auto; margin-top: 7px; display: table;"><i> <b>FH</b>ilipo </i><sub>v2.1 </sub></span>
+			<span style="text-align: center; margin-left: auto; margin-right: auto; margin-top: 7px; display: table;"><i> v3.0 </i><sub><b>FH</b>ilipo </sub></span>
 		</footer>
 	</div>
 </body>
