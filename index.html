@@ -178,6 +178,9 @@
 
 			-moz-appearance: textfield;
 		}
+		.text-muted {
+			font-size: 15px;
+		}
 
 		/* Chrome, Safari, Edge, Opera */
 		#kolicina::-webkit-outer-spin-button,
@@ -192,10 +195,10 @@
 		<h1 id="title">Kobaje</h1>
 		<div class="row" style="margin-bottom:45px; margin-top: 20px;">
 			<div class="col-sm-10 col-md-6 col-lg-5 align-self-center">
-				<input id="kolicina" type="number" style="width: 100%;" placeholder="Količina mesa" min="1">
+				<input id="kolicina" type="number" style="width: 100%;" placeholder="Količina mesa (kg)" min="1">
 			</div>
 		</div>
-		<div class="row" style="margin-bottom: 35px;">
+		<div class="row">
 			<div class="col-sm-10 col-md-6 col-lg-5 btn-group" role="group">
 				<input type="radio" class="btn-check" name="btnVrsta" id="btnVrstaNormalne" value="normalne" autocomplete="off" checked>
 				<label class="btn" for="btnVrstaNormalne">Normalne</label>
@@ -206,6 +209,9 @@
 				<input type="radio" class="btn-check" name="btnVrsta" id="bntVrstaRostiljke" value="rostiljke" autocomplete="off">
 				<label class="btn" for="bntVrstaRostiljke">Roštiljke</label>
 			  </div>
+		</div>
+		<div class="row" style="margin: 5px 0 25px;">
+			<span class="text-muted"><span style="font-weight: bold;">Napomena:</span> Količina soli je jedina razlika između vrsta.</span>
 		</div>
 		<div class="row" style="margin-bottom: 35px;">
 			<div class="col-sm-10 col-md-6 col-lg-5 align-self-center">
