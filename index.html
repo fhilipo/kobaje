@@ -193,27 +193,27 @@
 <body>
 	<div class="container" style="margin-top: 20px;">
 		<h1 id="title">Kobaje</h1>
-		<div class="row" style="margin-bottom:45px; margin-top: 20px;">
+		<div class="row" style="margin-bottom:30px; margin-top: 20px;">
 			<div class="col-sm-10 col-md-6 col-lg-5 align-self-center">
 				<input id="kolicina" type="number" style="width: 100%;" placeholder="Količina mesa (kg)" min="1">
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-bottom: 30px;">
 			<div class="col-sm-10 col-md-6 col-lg-5 btn-group" role="group">
 				<input type="radio" class="btn-check" name="btnVrsta" id="btnVrstaNormalne" value="normalne" autocomplete="off" checked>
 				<label class="btn" for="btnVrstaNormalne">Normalne</label>
 			  
-				<input type="radio" class="btn-check" name="btnVrsta" id="btnVrstaLjute" value="ljute" autocomplete="off">
+				<input type="radio" class="btn-check" name="btnVrsta" id="btnVrstaLjute" value="ljute" autocomplete="off" disabled="true">
 				<label class="btn" for="btnVrstaLjute">Ljute 🔥</label>
 			  
-				<input type="radio" class="btn-check" name="btnVrsta" id="bntVrstaRostiljke" value="rostiljke" autocomplete="off">
+				<input type="radio" class="btn-check" name="btnVrsta" id="bntVrstaRostiljke" value="rostiljke" autocomplete="off" disabled="true">
 				<label class="btn" for="bntVrstaRostiljke">Roštiljke</label>
 			  </div>
 		</div>
-		<div class="row" style="margin: 5px 0 25px;">
+		<div class="row" style="margin: 5px 0 25px; display: none;">
 			<span class="text-muted"><span style="font-weight: bold;">Napomena:</span> Količina soli je jedina razlika između vrsta.</span>
 		</div>
-		<div class="row" style="margin-bottom: 35px;">
+		<div class="row" style="margin-bottom: 30px;">
 			<div class="col-sm-10 col-md-6 col-lg-5 align-self-center">
 				<button id="izracunaj" class="btn">Izračunaj</button>
 			</div>
