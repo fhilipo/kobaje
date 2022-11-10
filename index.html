@@ -16,6 +16,7 @@
 			$("#kolicina").keydown(function(e){
 				if (e.keyCode == 13) {
 					izracunaj();
+					$("#kolicina").blur();
 				} else {
 					$("#sastojci").hide();
 				}
