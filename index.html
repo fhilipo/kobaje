@@ -9,11 +9,16 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
 		$(document).ready(function(){
+			$("#kolicina").focus();
 			$("#izracunaj").click(function(){
 				izracunaj();
 			});
-			$("#kolicina").keydown(function(){
-				$("#sastojci").hide();
+			$("#kolicina").keydown(function(e){
+				if (e.keyCode == 13) {
+					izracunaj();
+				} else {
+					$("#sastojci").hide();
+				}
 			});
 			$('input[type=radio][name=btnVrsta]').on('change', function() {
 				$("#sastojci").hide();
@@ -115,7 +120,7 @@
 		}
 
 		h1 {
-			font-size: 33px;
+			font-size: 40px;
 		}
 
 		#title {
@@ -170,9 +175,8 @@
 			background-color: transparent;
 			font-size: 35px;
 			text-align: center;
-		}
-		#kolicina:focus {
-			border-color: red;
+
+			-moz-appearance: textfield;
 		}
 
 		/* Chrome, Safari, Edge, Opera */
@@ -180,11 +184,6 @@
 		#kolicina::-webkit-inner-spin-button {
 			-webkit-appearance: none;
 			margin: 0;
-		}
-
-		/* Firefox */
-		#kolicina {
-			-moz-appearance: textfield;
 		}
 	</style>
 </head>
