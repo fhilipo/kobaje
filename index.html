@@ -23,16 +23,19 @@
 						$("#title").css("color", "#00cc55");
 						$("#izracunaj").css("background-color", "#00cc55");
 						$("footer").css("background-color", "#00cc55");
+						$("#kolicina").css("border-color", "#00cc55");
 						break;
 					case "ljute":
 						$("#title").css("color", "red");
 						$("#izracunaj").css("background-color", "red");
 						$("footer").css("background-color", "red");
+						$("#kolicina").css("border-color", "red");
 						break;
 					case "rostiljke":
 						$("#title").css("color", "#adb000");
 						$("#izracunaj").css("background-color", "#adb000");
 						$("footer").css("background-color", "#adb000");
+						$("#kolicina").css("border-color", "#adb000");
 						break;
 				}
 
@@ -159,12 +162,36 @@
 			border: 2px solid darkgoldenrod;
 			color: white;
 		}
+
+		#kolicina {
+			outline: 0;
+			border-width: 0 0 2px;
+			border-color: #00cc55;
+			background-color: transparent;
+			font-size: 35px;
+			text-align: center;
+		}
+		#kolicina:focus {
+			border-color: red;
+		}
+
+		/* Chrome, Safari, Edge, Opera */
+		#kolicina::-webkit-outer-spin-button,
+		#kolicina::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		/* Firefox */
+		#kolicina {
+			-moz-appearance: textfield;
+		}
 	</style>
 </head>
 <body>
 	<div class="container" style="margin-top: 20px;">
 		<h1 id="title">Kobaje</h1>
-		<div class="row" style="margin-bottom: 15px; margin-top: 20px;">
+		<div class="row" style="margin-bottom:45px; margin-top: 20px;">
 			<div class="col-sm-10 col-md-6 col-lg-5 align-self-center">
 				<input id="kolicina" type="number" style="width: 100%;" placeholder="Količina mesa" min="1">
 			</div>
